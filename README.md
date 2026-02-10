@@ -217,20 +217,20 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 ## 🖼️ Application Screenshots
 
 ### 1. Main Interface
-![Main Interface](assets/screenshots/main_interface.png)<img width="1911" height="883" alt="main_interface" src="https://github.com/user-attachments/assets/6c190d35-397b-46ee-b730-996bb7b5d59b" />
+<img width="1911" height="883" alt="main_interface" src="https://github.com/user-attachments/assets/6c190d35-397b-46ee-b730-996bb7b5d59b" />
 
 *Clean, user-friendly interface with GitHub URL input, Ollama model selection, and speed tips for optimal performance*
 
 ### 2. Repository Analysis & AI-Powered Code Explanation
-![Repository Analysis](assets/screenshots/repo_analysis.png<img width="1814" height="838" alt="File_analysis" src="https://github.com/user-attachments/assets/05b67123-7984-4b93-a79e-b7a58bd972ea" />
+<img width="1814" height="838" alt="File_analysis" src="https://github.com/user-attachments/assets/05b67123-7984-4b93-a79e-b7a58bd972ea" />
 )
 *AI-powered analysis showing detailed explanations of repository purpose, functionality, and workflow. Includes repository map, file browser, and download functionality*
 
 ### 3. File-Level AI Analysis
-![File Analysis](assets/screenshots/file_analysis.png)![Uploading File_analysis.png…]()
+<img width="1873" height="882" alt="repo_analysis" src="https://github.com/user-attachments/assets/80f0bb29-b059-496e-8792-51d07e2975f7" />
 
 *Detailed file analysis with human-readable information and technical function breakdown for individual files*
-<img width="1873" height="882" alt="repo_analysis" src="https://github.com/user-attachments/assets/80f0bb29-b059-496e-8792-51d07e2975f7" />
+
 
 ---
 
