@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # GitAIReader – AI-Powered GitHub Code Assistant using Endee
 
 ## 📌 Project Overview
@@ -100,6 +101,8 @@ GitAicode_Reader/
 ├── start.bat               # Automated setup script
 └── RUN_INSTRUCTIONS.md     # Detailed setup guide
 =======
+=======
+>>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
 # Endee: High-Performance Open Source Vector Database
 
 **Endee (nD)** is a specialized, high-performance vector database built for speed and efficiency. This guide covers supported platforms, dependency requirements, and detailed build instructions using both our automated installer and manual CMake configuration.
@@ -351,11 +354,15 @@ Alternatively, as a single line:
 
 ```bash
 NDD_DATA_DIR=./data ./build/ndd
+<<<<<<< HEAD
+>>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+=======
 >>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
 ```
 
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## ⚙️ Prerequisites
 
@@ -557,6 +564,8 @@ This project is licensed under the MIT License.
 **Mahesh**  
 GitHub: https://github.com/Mahesh2004-prog
 =======
+=======
+>>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
 
 
 ## 3. Docker Deployment
@@ -687,4 +696,7 @@ licensed under their respective open source licenses.
 
 Use of those components is governed by the terms and conditions of their
 individual licenses, not by the Apache License 2.0 for this project.
+<<<<<<< HEAD
+>>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+=======
 >>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
