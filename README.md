@@ -1,7 +1,7 @@
 
 # GitAIReader – AI-Powered GitHub Code Assistant using Endee
 
-## 📌 Project Overview
+##  Project Overview
 GitAIReader is an **AI-powered GitHub repository analysis tool** that enables users to ask **natural language questions about any public GitHub codebase**.  
 The system uses **vector embeddings, hybrid search, and Retrieval Augmented Generation (RAG)** to understand source code and provide accurate, contextual answers.
 
@@ -9,7 +9,7 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 - Build a real-world **AI/ML project using vector search**
 - Use **Endee** as the primary vector database
 - Implement **Semantic Search + Hybrid Search + RAG**
@@ -19,8 +19,8 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ---
 
-## 🚀 Use Case Implemented
-### ✅ AI-Powered Code Understanding (Semantic Search & RAG)
+##  Use Case Implemented
+###  AI-Powered Code Understanding (Semantic Search & RAG)
 
 **What this application does:**
 - Accepts a GitHub repository URL
@@ -42,7 +42,7 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ---
 
-## 🧠 Endee Vector Database Integration
+##  Endee Vector Database Integration
 Endee is used as the **core vector storage layer** for this project.
 
 - Stores embeddings for all code chunks
@@ -53,11 +53,11 @@ Endee is used as the **core vector storage layer** for this project.
 - Ensures reliability during local development
 
 Official Endee repository:  
-👉 https://github.com/EndeeLabs/endee
+ https://github.com/EndeeLabs/endee
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Language:** Python  
 - **UI:** Streamlit  
 - **Vector Database:** Endee (with local fallback)  
@@ -71,7 +71,7 @@ All dependencies are listed in `requirements.txt`.
 
 ---
 
-## 🧩 System Architecture / Workflow
+##  System Architecture / Workflow
 1. User enters a GitHub repository URL
 2. Repository is cloned locally
 3. Code files are scanned and filtered by extension
@@ -88,7 +88,7 @@ All dependencies are listed in `requirements.txt`.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```
 GitAicode_Reader/
 ├── app_files/
@@ -99,9 +99,7 @@ GitAicode_Reader/
 ├── requirements.txt        # Python dependencies
 ├── start.bat               # Automated setup script
 └── RUN_INSTRUCTIONS.md     # Detailed setup guide
-=======
-=======
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+
 # Endee: High-Performance Open Source Vector Database
 
 **Endee (nD)** is a specialized, high-performance vector database built for speed and efficiency. This guide covers supported platforms, dependency requirements, and detailed build instructions using both our automated installer and manual CMake configuration.
@@ -114,12 +112,12 @@ there are 3 ways to build and run endee:
 also you can run endee using docker from docker hub without building it locally. refer to section 4 for more details.
 
 ---
-## ⚙️ Prerequisites
+##  Prerequisites
 
 Before running the project, ensure you have:
 
 1. **Python 3.10+** installed ([python.org](https://www.python.org/downloads/))
-   - ⚠️ **CRITICAL**: Check "Add Python to PATH" during installation
+   -  **CRITICAL**: Check "Add Python to PATH" during installation
 2. **VS Code** installed ([code.visualstudio.com](https://code.visualstudio.com/))
 3. **Git** installed ([git-scm.com](https://git-scm.com/downloads))
 4. **Ollama** installed for AI capabilities ([ollama.com](https://ollama.com/))
@@ -135,22 +133,22 @@ Before running the project, ensure you have:
 
 ---
 
-## ▶️ Running the Project in VS Code
+##  Running the Project in VS Code
 
-### 🔹 Step 1: Open Project in VS Code
+###  Step 1: Open Project in VS Code
 1. Open VS Code
 2. Click **File** → **Open Folder**
 3. Navigate to and select the `GitAicode_Reader` folder
 
-### 🔹 Step 2: Open Terminal in VS Code
+###  Step 2: Open Terminal in VS Code
 Choose any method:
 - **Keyboard Shortcut**: Press `Ctrl + `` (backtick)
 - **Menu**: Click **Terminal** → **New Terminal**
 - **Command Palette**: Press `Ctrl + Shift + P`, type "Create New Terminal", press Enter
 
-### 🔹 Step 3: Run the Application
+###  Step 3: Run the Application
 
-#### ✅ Option A: Automatic Setup (Recommended)
+####  Option A: Automatic Setup (Recommended)
 In the VS Code terminal, run:
 ```bash
 .\start.bat
@@ -164,7 +162,7 @@ This script will automatically:
 
 **Wait for the message:** `Local URL: http://localhost:8501`
 
-#### 🔹 Option B: Manual Setup
+####  Option B: Manual Setup
 If the automated script fails, run these commands one by one in the VS Code terminal:
 
 ```bash
@@ -183,12 +181,12 @@ streamlit run app_files/app.py
 
 *Note: You should see `(venv)` at the start of your terminal prompt after activation*
 
-### 🔹 Step 4: Open in Browser
+###  Step 4: Open in Browser
 Once you see `Local URL: http://localhost:8501`, open that URL in your web browser.
 
 ---
 
-## 🖥️ How to Use the Application
+##  How to Use the Application
 
 1. **Enter GitHub URL**: Paste a repository URL (e.g., `https://github.com/pallets/flask`)
 2. **Click "Analyze Repo"**: Wait for cloning and processing to complete
@@ -201,7 +199,7 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 
 ---
 
-## 📊 Example Output
+##  Example Output
 
 **User Question:**
 > "Explain what this file does"
@@ -234,47 +232,47 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 
 ---
 
-## ⚠️ Troubleshooting in VS Code
+##  Troubleshooting in VS Code
 
-### 🔴 "Connection refused" for localhost:8080
+###  "Connection refused" for localhost:8080
 **This is normal and safe to ignore!**
 - The app tries to connect to the Endee vector database server
 - It automatically falls back to local in-memory storage
 - Your application will work perfectly fine
 
-### 🔴 "Ollama not found"
+###  "Ollama not found"
 **Solution:**
 1. Ensure Ollama is installed from [ollama.com](https://ollama.com/)
 2. Verify it's running: `ollama list`
 3. Download the model: `ollama run qwen2.5:3b`
 4. Keep Ollama running in the background
 
-### 🔴 "ModuleNotFoundError" or "streamlit is not recognized"
+###  "ModuleNotFoundError" or "streamlit is not recognized"
 **Solution:**
 1. Activate the virtual environment: `.\venv\Scripts\activate`
 2. Look for `(venv)` at the start of your terminal prompt
 3. Reinstall dependencies: `pip install -r requirements.txt`
 4. Alternative: `python -m streamlit run app_files/app.py`
 
-### 🔴 "Python is not recognized"
+###  "Python is not recognized"
 **Solution:**
 1. Install Python from [python.org](https://www.python.org/downloads/)
 2. Check **"Add Python to PATH"** during installation
 3. Restart VS Code
 4. Verify: `python --version`
 
-### 🔴 Port 8501 already in use
+###  Port 8501 already in use
 **Solution:**
 - Streamlit will use the next available port (8502, 8503, etc.)
 - Check terminal output for the actual URL
 - Or stop existing process: Press `Ctrl + C`
 
-### 🔴 Slow AI responses
+###  Slow AI responses
 **Solution:**
 - Use smaller models like `qwen2.5:3b` (recommended)
 - Avoid large models like `llama2:70b`
 
-### 🔴 Virtual environment activation issues
+###  Virtual environment activation issues
 **Solution:**
 - If `.\venv\Scripts\activate` doesn't work, try:
   - PowerShell: `.\venv\Scripts\Activate.ps1`
@@ -283,7 +281,7 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 
 ---
 
-## 🔄 Stopping the Application
+##  Stopping the Application
 
 To stop Streamlit in VS Code:
 - Press `Ctrl + C` in the terminal
@@ -292,7 +290,7 @@ To stop Streamlit in VS Code:
 
 ---
 
-## 🌱 Future Enhancements
+##  Future Enhancements
 - Web deployment
 - Multi-repo comparison
 - Agentic AI workflows
@@ -301,12 +299,12 @@ To stop Streamlit in VS Code:
 
 ---
 
-## 📄 License
+##  License
 This project is licensed under the MIT License.
 
 ---
 
-## 🙌 Acknowledgements
+##  Acknowledgements
 - **Endee Labs** – Vector Database
 - **Ollama** – Local LLM runtime
 - **LangChain** community
@@ -314,7 +312,7 @@ This project is licensed under the MIT License.
 
 ---
 
-## 👤 Author
+##  Author
 **Mahesh**  
 GitHub: https://github.com/Mahesh2004-prog
 =======
@@ -366,7 +364,4 @@ licensed under their respective open source licenses.
 
 Use of those components is governed by the terms and conditions of their
 individual licenses, not by the Apache License 2.0 for this project.
-<<<<<<< HEAD
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
-=======
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+
