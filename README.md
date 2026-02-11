@@ -1,7 +1,11 @@
 
 # GitAIReader – AI-Powered GitHub Code Assistant using Endee
 
+<<<<<<< HEAD
 ## 📌 Project Overview
+=======
+##  Project Overview
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 GitAIReader is an **AI-powered GitHub repository analysis tool** that enables users to ask **natural language questions about any public GitHub codebase**.  
 The system uses **vector embeddings, hybrid search, and Retrieval Augmented Generation (RAG)** to understand source code and provide accurate, contextual answers.
 
@@ -9,7 +13,11 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ---
 
+<<<<<<< HEAD
 ## 🎯 Objectives
+=======
+##  Objectives
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 - Build a real-world **AI/ML project using vector search**
 - Use **Endee** as the primary vector database
 - Implement **Semantic Search + Hybrid Search + RAG**
@@ -19,8 +27,13 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ---
 
+<<<<<<< HEAD
 ## 🚀 Use Case Implemented
 ### ✅ AI-Powered Code Understanding (Semantic Search & RAG)
+=======
+##  Use Case Implemented
+###  AI-Powered Code Understanding (Semantic Search & RAG)
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 
 **What this application does:**
 - Accepts a GitHub repository URL
@@ -42,7 +55,11 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ---
 
+<<<<<<< HEAD
 ## 🧠 Endee Vector Database Integration
+=======
+##  Endee Vector Database Integration
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 Endee is used as the **core vector storage layer** for this project.
 
 - Stores embeddings for all code chunks
@@ -53,11 +70,19 @@ Endee is used as the **core vector storage layer** for this project.
 - Ensures reliability during local development
 
 Official Endee repository:  
+<<<<<<< HEAD
 👉 https://github.com/EndeeLabs/endee
 
 ---
 
 ## 🛠️ Tech Stack
+=======
+ https://github.com/EndeeLabs/endee
+
+---
+
+##  Tech Stack
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 - **Language:** Python  
 - **UI:** Streamlit  
 - **Vector Database:** Endee (with local fallback)  
@@ -71,7 +96,11 @@ All dependencies are listed in `requirements.txt`.
 
 ---
 
+<<<<<<< HEAD
 ## 🧩 System Architecture / Workflow
+=======
+##  System Architecture / Workflow
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 1. User enters a GitHub repository URL
 2. Repository is cloned locally
 3. Code files are scanned and filtered by extension
@@ -88,7 +117,11 @@ All dependencies are listed in `requirements.txt`.
 
 ---
 
+<<<<<<< HEAD
 ## 📂 Project Structure
+=======
+##  Project Structure
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 ```
 GitAicode_Reader/
 ├── app_files/
@@ -99,7 +132,11 @@ GitAicode_Reader/
 ├── requirements.txt        # Python dependencies
 ├── start.bat               # Automated setup script
 └── RUN_INSTRUCTIONS.md     # Detailed setup guide
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 # Endee: High-Performance Open Source Vector Database
 
 **Endee (nD)** is a specialized, high-performance vector database built for speed and efficiency. This guide covers supported platforms, dependency requirements, and detailed build instructions using both our automated installer and manual CMake configuration.
@@ -112,11 +149,17 @@ there are 3 ways to build and run endee:
 also you can run endee using docker from docker hub without building it locally. refer to section 4 for more details.
 
 ---
+##  Prerequisites
 
-## System Requirements
+Before running the project, ensure you have:
 
-Before installing, ensure your system meets the following hardware and operating system requirements.
+1. **Python 3.10+** installed ([python.org](https://www.python.org/downloads/))
+   -  **CRITICAL**: Check "Add Python to PATH" during installation
+2. **VS Code** installed ([code.visualstudio.com](https://code.visualstudio.com/))
+3. **Git** installed ([git-scm.com](https://git-scm.com/downloads))
+4. **Ollama** installed for AI capabilities ([ollama.com](https://ollama.com/))
 
+<<<<<<< HEAD
 ### Supported Operating Systems
 
 * **Linux**: Ubuntu(22.04, 24.04, 25.04) Debian(12, 13), Rocky(8, 9, 10), Centos(8, 9, 10), Fedora(40, 42, 43)
@@ -595,52 +638,201 @@ leave `NDD_AUTH_TOKEN` empty or remove it to run endee without authentication.
 You can also use `docker-compose` to run the service.
 
 1. Start the container:
+=======
+### One-Time Ollama Setup
+1. Open a terminal (Windows: Search "cmd" or "PowerShell")
+2. Download the AI model:
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
    ```bash
-   docker-compose up
+   ollama run qwen2.5:3b
    ```
+3. Wait for download, then type `/bye` to exit
+4. Keep Ollama running in the background
 
 ---
 
-## 4. Running Docker container from registry
+##  Running the Project in VS Code
 
-You can run Endee directly using the pre-built image from Docker Hub without building locally.
+###  Step 1: Open Project in VS Code
+1. Open VS Code
+2. Click **File** → **Open Folder**
+3. Navigate to and select the `GitAicode_Reader` folder
 
-### Using Docker Compose
+###  Step 2: Open Terminal in VS Code
+Choose any method:
+- **Keyboard Shortcut**: Press `Ctrl + `` (backtick)
+- **Menu**: Click **Terminal** → **New Terminal**
+- **Command Palette**: Press `Ctrl + Shift + P`, type "Create New Terminal", press Enter
 
-Create a new directory for Endee:
+###  Step 3: Run the Application
+
+####  Option A: Automatic Setup (Recommended)
+In the VS Code terminal, run:
+```bash
+.\start.bat
+```
+
+This script will automatically:
+- ✓ Create a virtual environment
+- ✓ Install all dependencies
+- ✓ Check for Ollama
+- ✓ Launch the Streamlit app
+
+**Wait for the message:** `Local URL: http://localhost:8501`
+
+####  Option B: Manual Setup
+If the automated script fails, run these commands one by one in the VS Code terminal:
 
 ```bash
-mkdir endee && cd endee
+# 1. Create virtual environment
+python -m venv venv
+
+# 2. Activate virtual environment
+.\venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the application
+streamlit run app_files/app.py
 ```
 
-Inside this directory, create a file named `docker-compose.yml` and copy the following content into it:
+*Note: You should see `(venv)` at the start of your terminal prompt after activation*
 
-```yaml
-services:
-  endee:
-    image: endeeio/endee-server:latest
-    container_name: endee-server
-    ports:
-      - "8080:8080"
-    environment:
-      NDD_NUM_THREADS: 0
-      NDD_AUTH_TOKEN: ""  # Optional: set for authentication
-    volumes:
-      - endee-data:/data
-    restart: unless-stopped
-
-volumes:
-  endee-data:
-```
-
-Then run:
-```bash
-docker compose up -d
-```
-
-for more details visit [docs.endee.io](https://docs.endee.io/quick-start)
+###  Step 4: Open in Browser
+Once you see `Local URL: http://localhost:8501`, open that URL in your web browser.
 
 ---
+
+##  How to Use the Application
+
+1. **Enter GitHub URL**: Paste a repository URL (e.g., `https://github.com/pallets/flask`)
+2. **Click "Analyze Repo"**: Wait for cloning and processing to complete
+3. **Browse Files**: View repository files from the sidebar
+4. **Ask Questions**: Type questions in natural language like:
+   - "What does this repository do?"
+   - "Explain this file in simple terms"
+   - "Where is authentication handled?"
+5. **View Results**: See AI-generated answers with referenced source files and metrics
+
+---
+
+##  Example Output
+
+**User Question:**
+> "Explain what this file does"
+
+**AI Response:**
+- Human-readable explanation
+- Technical function of the file
+- Reason why the code exists
+- Referenced source files
+
+---
+
+## 🖼️ Application Screenshots
+
+### 1. Main Interface
+<img width="1911" height="883" alt="main_interface" src="https://github.com/user-attachments/assets/6c190d35-397b-46ee-b730-996bb7b5d59b" />
+
+*Clean, user-friendly interface with GitHub URL input, Ollama model selection, and speed tips for optimal performance*
+
+### 2. Repository Analysis & AI-Powered Code Explanation
+<img width="1814" height="838" alt="File_analysis" src="https://github.com/user-attachments/assets/05b67123-7984-4b93-a79e-b7a58bd972ea" />
+)
+*AI-powered analysis showing detailed explanations of repository purpose, functionality, and workflow. Includes repository map, file browser, and download functionality*
+
+### 3. File-Level AI Analysis
+<img width="1873" height="882" alt="repo_analysis" src="https://github.com/user-attachments/assets/80f0bb29-b059-496e-8792-51d07e2975f7" />
+
+*Detailed file analysis with human-readable information and technical function breakdown for individual files*
+
+
+---
+
+##  Troubleshooting in VS Code
+
+###  "Connection refused" for localhost:8080
+**This is normal and safe to ignore!**
+- The app tries to connect to the Endee vector database server
+- It automatically falls back to local in-memory storage
+- Your application will work perfectly fine
+
+###  "Ollama not found"
+**Solution:**
+1. Ensure Ollama is installed from [ollama.com](https://ollama.com/)
+2. Verify it's running: `ollama list`
+3. Download the model: `ollama run qwen2.5:3b`
+4. Keep Ollama running in the background
+
+###  "ModuleNotFoundError" or "streamlit is not recognized"
+**Solution:**
+1. Activate the virtual environment: `.\venv\Scripts\activate`
+2. Look for `(venv)` at the start of your terminal prompt
+3. Reinstall dependencies: `pip install -r requirements.txt`
+4. Alternative: `python -m streamlit run app_files/app.py`
+
+###  "Python is not recognized"
+**Solution:**
+1. Install Python from [python.org](https://www.python.org/downloads/)
+2. Check **"Add Python to PATH"** during installation
+3. Restart VS Code
+4. Verify: `python --version`
+
+###  Port 8501 already in use
+**Solution:**
+- Streamlit will use the next available port (8502, 8503, etc.)
+- Check terminal output for the actual URL
+- Or stop existing process: Press `Ctrl + C`
+
+###  Slow AI responses
+**Solution:**
+- Use smaller models like `qwen2.5:3b` (recommended)
+- Avoid large models like `llama2:70b`
+
+###  Virtual environment activation issues
+**Solution:**
+- If `.\venv\Scripts\activate` doesn't work, try:
+  - PowerShell: `.\venv\Scripts\Activate.ps1`
+  - Command Prompt: `.\venv\Scripts\activate.bat`
+- Or use the automated script: `.\start.bat`
+
+---
+
+##  Stopping the Application
+
+To stop Streamlit in VS Code:
+- Press `Ctrl + C` in the terminal
+- Or close the terminal window
+- Or click the trash icon in the terminal panel
+
+---
+
+##  Future Enhancements
+- Web deployment
+- Multi-repo comparison
+- Agentic AI workflows
+- Recommendation systems
+- Docker support
+
+---
+
+##  License
+This project is licensed under the MIT License.
+
+---
+
+##  Acknowledgements
+- **Endee Labs** – Vector Database
+- **Ollama** – Local LLM runtime
+- **LangChain** community
+- Open-source AI ecosystem
+
+---
+
+##  Author
+**Mahesh**  
+GitHub: https://github.com/Mahesh2004-prog
 
 ## Contribution
 
@@ -687,4 +879,8 @@ licensed under their respective open source licenses.
 
 Use of those components is governed by the terms and conditions of their
 individual licenses, not by the Apache License 2.0 for this project.
+<<<<<<< HEAD
 >>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+=======
+
+>>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
