@@ -261,7 +261,8 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 *AI-powered analysis showing detailed explanations of repository purpose, functionality, and workflow. Includes repository map, file browser, and download functionality*
 
 ### 3. File-Level AI Analysis
-![File Analysis](assets/screenshots/file_analysis.png)
+<img width="1814" height="838" alt="File_analysis" src="https://github.com/user-attachments/assets/b60834d8-6f3d-4d48-a739-3c974d693125" />
+
 *Detailed file analysis with human-readable information and technical function breakdown for individual files*
 
 ---
