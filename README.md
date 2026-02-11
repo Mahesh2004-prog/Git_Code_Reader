@@ -4,8 +4,6 @@
 
 ## 📌 Project Overview
 
-##  Project Overview
-
 GitAIReader is an **AI-powered GitHub repository analysis tool** that enables users to ask **natural language questions about any public GitHub codebase**.  
 The system uses **vector embeddings, hybrid search, and Retrieval Augmented Generation (RAG)** to understand source code and provide accurate, contextual answers.
 
