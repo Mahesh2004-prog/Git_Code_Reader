@@ -14,8 +14,6 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 ---
 
 ## 🎯 Objectives
-=======
-##  Objectives
 - Build a real-world **AI/ML project using vector search**
 - Use **Endee** as the primary vector database
 - Implement **Semantic Search + Hybrid Search + RAG**
@@ -27,9 +25,6 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 
 ## 🚀 Use Case Implemented
 ### ✅ AI-Powered Code Understanding (Semantic Search & RAG)
-=======
-##  Use Case Implemented
-###  AI-Powered Code Understanding (Semantic Search & RAG)
 
 **What this application does:**
 - Accepts a GitHub repository URL
@@ -52,9 +47,6 @@ At its core, the project uses **Endee as the vector database**, with a **robust 
 ---
 
 ## 🧠 Endee Vector Database Integration
-=======
-##  Endee Vector Database Integration
->>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 Endee is used as the **core vector storage layer** for this project.
 
 - Stores embeddings for all code chunks
@@ -66,15 +58,12 @@ Endee is used as the **core vector storage layer** for this project.
 
 Official Endee repository:  
 👉 https://github.com/EndeeLabs/endee
-
 ---
 
 ## 🛠️ Tech Stack
  https://github.com/EndeeLabs/endee
 
 ---
-
-##  Tech Stack
 
 - **Language:** Python  
 - **UI:** Streamlit  
@@ -91,8 +80,6 @@ All dependencies are listed in `requirements.txt`.
 
 ## 🧩 System Architecture / Workflow
 
-##  System Architecture / Workflow
->>>>>>> 653827b5e4497cc3e7cf934bcaf019cb5f0127e7
 1. User enters a GitHub repository URL
 2. Repository is cloned locally
 3. Code files are scanned and filtered by extension
@@ -110,8 +97,6 @@ All dependencies are listed in `requirements.txt`.
 ---
 
 ## 📂 Project Structure
-=======
-##  Project Structure
 ```
 GitAicode_Reader/
 ├── app_files/
@@ -474,112 +459,8 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 - Technical function of the file
 - Reason why the code exists
 - Referenced source files
-
 ---
 
-## 🖼️ Application Screenshots
-
-### 1. Main Interface
-<img width="1911" height="883" alt="main_interface" src="https://github.com/user-attachments/assets/6c190d35-397b-46ee-b730-996bb7b5d59b" />
-
-*Clean, user-friendly interface with GitHub URL input, Ollama model selection, and speed tips for optimal performance*
-
-### 2. Repository Analysis & AI-Powered Code Explanation
-<img width="1814" height="838" alt="File_analysis" src="https://github.com/user-attachments/assets/05b67123-7984-4b93-a79e-b7a58bd972ea" />
-)
-*AI-powered analysis showing detailed explanations of repository purpose, functionality, and workflow. Includes repository map, file browser, and download functionality*
-
-### 3. File-Level AI Analysis
-<img width="1873" height="882" alt="repo_analysis" src="https://github.com/user-attachments/assets/80f0bb29-b059-496e-8792-51d07e2975f7" />
-
-*Detailed file analysis with human-readable information and technical function breakdown for individual files*
-
-
----
-
-##  Troubleshooting in VS Code
-
-###  "Connection refused" for localhost:8080
-**This is normal and safe to ignore!**
-- The app tries to connect to the Endee vector database server
-- It automatically falls back to local in-memory storage
-- Your application will work perfectly fine
-
-###  "Ollama not found"
-**Solution:**
-1. Ensure Ollama is installed from [ollama.com](https://ollama.com/)
-2. Verify it's running: `ollama list`
-3. Download the model: `ollama run qwen2.5:3b`
-4. Keep Ollama running in the background
-
-###  "ModuleNotFoundError" or "streamlit is not recognized"
-**Solution:**
-1. Activate the virtual environment: `.\venv\Scripts\activate`
-2. Look for `(venv)` at the start of your terminal prompt
-3. Reinstall dependencies: `pip install -r requirements.txt`
-4. Alternative: `python -m streamlit run app_files/app.py`
-
-###  "Python is not recognized"
-**Solution:**
-1. Install Python from [python.org](https://www.python.org/downloads/)
-2. Check **"Add Python to PATH"** during installation
-3. Restart VS Code
-4. Verify: `python --version`
-
-###  Port 8501 already in use
-**Solution:**
-- Streamlit will use the next available port (8502, 8503, etc.)
-- Check terminal output for the actual URL
-- Or stop existing process: Press `Ctrl + C`
-
-###  Slow AI responses
-**Solution:**
-- Use smaller models like `qwen2.5:3b` (recommended)
-- Avoid large models like `llama2:70b`
-
-###  Virtual environment activation issues
-**Solution:**
-- If `.\venv\Scripts\activate` doesn't work, try:
-  - PowerShell: `.\venv\Scripts\Activate.ps1`
-  - Command Prompt: `.\venv\Scripts\activate.bat`
-- Or use the automated script: `.\start.bat`
-
----
-
-##  Stopping the Application
-
-To stop Streamlit in VS Code:
-- Press `Ctrl + C` in the terminal
-- Or close the terminal window
-- Or click the trash icon in the terminal panel
-
----
-
-##  Future Enhancements
-- Web deployment
-- Multi-repo comparison
-- Agentic AI workflows
-- Recommendation systems
-- Docker support
-
----
-
-##  License
-This project is licensed under the MIT License.
-
----
-
-##  Acknowledgements
-- **Endee Labs** – Vector Database
-- **Ollama** – Local LLM runtime
-- **LangChain** community
-- Open-source AI ecosystem
-
----
-
-##  Author
-**Mahesh**  
-GitHub: https://github.com/Mahesh2004-prog
 
 ## Contribution
 
