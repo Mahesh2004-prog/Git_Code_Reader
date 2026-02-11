@@ -1,8 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 # GitAIReader – AI-Powered GitHub Code Assistant using Endee
 
+
 ## 📌 Project Overview
+
 GitAIReader is an **AI-powered GitHub repository analysis tool** that enables users to ask **natural language questions about any public GitHub codebase**.  
 The system uses **vector embeddings, hybrid search, and Retrieval Augmented Generation (RAG)** to understand source code and provide accurate, contextual answers.
 
@@ -55,10 +56,13 @@ Endee is used as the **core vector storage layer** for this project.
 
 Official Endee repository:  
 👉 https://github.com/EndeeLabs/endee
-
 ---
 
 ## 🛠️ Tech Stack
+ https://github.com/EndeeLabs/endee
+
+---
+
 - **Language:** Python  
 - **UI:** Streamlit  
 - **Vector Database:** Endee (with local fallback)  
@@ -73,6 +77,7 @@ All dependencies are listed in `requirements.txt`.
 ---
 
 ## 🧩 System Architecture / Workflow
+
 1. User enters a GitHub repository URL
 2. Repository is cloned locally
 3. Code files are scanned and filtered by extension
@@ -100,9 +105,7 @@ GitAicode_Reader/
 ├── requirements.txt        # Python dependencies
 ├── start.bat               # Automated setup script
 └── RUN_INSTRUCTIONS.md     # Detailed setup guide
-=======
-=======
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+
 # Endee: High-Performance Open Source Vector Database
 
 **Endee (nD)** is a specialized, high-performance vector database built for speed and efficiency. This guide covers supported platforms, dependency requirements, and detailed build instructions using both our automated installer and manual CMake configuration.
@@ -115,10 +118,15 @@ there are 3 ways to build and run endee:
 also you can run endee using docker from docker hub without building it locally. refer to section 4 for more details.
 
 ---
+##  Prerequisites
 
-## System Requirements
+Before running the project, ensure you have:
 
-Before installing, ensure your system meets the following hardware and operating system requirements.
+1. **Python 3.10+** installed ([python.org](https://www.python.org/downloads/))
+   -  **CRITICAL**: Check "Add Python to PATH" during installation
+2. **VS Code** installed ([code.visualstudio.com](https://code.visualstudio.com/))
+3. **Git** installed ([git-scm.com](https://git-scm.com/downloads))
+4. **Ollama** installed for AI capabilities ([ollama.com](https://ollama.com/))
 
 ### Supported Operating Systems
 
@@ -139,231 +147,7 @@ The following packages are required for compilation.
 
 The easiest way to build **ndd** is using the included `install.sh` script. This script handles OS detection, dependency checks, and configuration automatically.
 
-### Usage
 
-First, ensure the script is executable:
-```bash
-chmod +x ./install.sh
-```
-
-Run the script from the root of the repository. You **must** provide arguments for the build mode and/or CPU optimization.
-
-```bash
-./install.sh [BUILD_MODE] [CPU_OPTIMIZATION]
-```
-
-### Build Arguments
-
-You can combine one **Build Mode** and one **CPU Optimization** flag.
-
-#### Build Modes
-
-| Flag | Description | CMake Equivalent |
-| --- | --- | --- |
-| `--release` | **Default.** Optimized release build. |  |
-| `--debug_all` | Enables full debugging symbols. | `-DND_DEBUG=ON -DDEBUG=ON` |
-| `--debug_nd` | Enables NDD-specific logging/timing. | `-DND_DEBUG=ON` |
-
-#### CPU Optimization Options
-
-Select the flag matching your hardware to enable SIMD optimizations.
-
-| Flag | Description | Target Hardware |
-| --- | --- | --- |
-| `--avx2` | Enables AVX2 (FMA, F16C) | Modern x86_64 Intel/AMD |
-| `--avx512` | Enables AVX512 (F, BW, VNNI, FP16) | Server-grade x86_64 (Xeon/Epyc) |
-| `--neon` | Enables NEON (FP16, DotProd) | Apple Silicon / ARMv8.2+ |
-| `--sve2` | Enables SVE2 (INT8/16, FP16) | ARMv9 / SVE2 compatible |
-
-> **Note:** The `--avx512` build configuration enforces mandatory runtime checks for specific instruction sets. To successfully run this build, your CPU must support **`avx512` (Foundation), `avx512_fp16`, `avx512_vnni`, `avx512bw`, and `avx512_vpopcntdq`**; if any of these extensions are missing, the database will fail to initialize and exit immediately to avoid runtime crashes.
-
-
-### Example Commands
-
-**Build for Production (Intel/AMD with AVX2):**
-
-```bash
-./install.sh --release --avx2
-```
-
-**Example Build for Debugging (Apple Silicon):**
-
-```bash
-./install.sh --debug_all --neon
-```
-
-### Running the Server
-
-We provide a `run.sh` script to simplify running the server. It automatically detects the built binary and uses `ndd_data_dir=./data` by default.
-
-First, ensure the script is executable:
-
-```bash
-chmod +x ./run.sh
-```
-
-Then run the script:
-
-```bash
-./run.sh
-```
-
-This will automatically identify the latest binary and start the server.
-
-#### Options
-
-You can override the defaults using arguments:
-
-*   `ndd_data_dir=DIR`: Set the data directory.
-*   `binary_file=FILE`: Set the binary file to run.
-*   `ndd_auth_token=TOKEN`: Set the authentication token (leave empty/ignore to run without authentication).
-
-#### Examples
-
-**Run with custom data directory:**
-
-```bash
-./run.sh ndd_data_dir=./my_data
-```
-
-**Run specific binary:**
-
-```bash
-./run.sh binary_file=./build/ndd-avx2
-```
-
-**Run with authentication token:**
-
-```bash
-./run.sh ndd_auth_token=your_token
-```
-
-
-**Run with all options**
-
-```bash
-./run.sh ndd_data_dir=./my_data binary_file=./build/ndd-avx2 ndd_auth_token=your_token
-```
-
-**For Help**
-
-```bash
-./run.sh --help
-```
-
-
-## 2. Manual Build (Advanced)
-
-If you prefer to configure the build manually or integrate it into an existing install pipeline, you can use `cmake` directly.
-
-### Step 1: Prepare Build Directory
-
-```bash
-mkdir build && cd build
-```
-
-### Step 2: Configure
-
-Run `cmake` with the appropriate flags. You must manually define the compiler if it is not your system default.
-
-**Configuration Flags:**
-
-* **Debug Options:**
-* `-DDEBUG=ON` (Enable debug symbols/O0)
-* `-DND_DEBUG=ON` (Enable internal logging)
-
-
-* **SIMD Selectors (Choose One):**
-* `-DUSE_AVX2=ON`
-* `-DUSE_AVX512=ON`
-* `-DUSE_NEON=ON`
-* `-DUSE_SVE2=ON`
-
-
-**Example (x86_64 AVX512 Release):**
-
-```bash
-cmake -DCMAKE_BUILD_TYPE=Release \
-      -DUSE_AVX512=ON \
-      ..
-```
-
-### Step 3: Compile
-
-```bash
-make -j$(nproc)
-```
-
-### Running the Built Binary
-
-After a successful build, the binary will be generated in the `build/` directory.
-
-### Binary Naming
-
-The output binary name depends on the SIMD flag used during compilation:
-
-* `ndd-avx2`
-* `ndd-avx512`
-* `ndd-neon` (or `ndd-neon-darwin` for mac)
-* `ndd-sve2`
-
-A symlink called `ndd` links to the binary compiled for the current build.
-
-### Runtime Environment Variables
-
-Some environment variables **ndd** reads at runtime:
-
-* `NDD_DATA_DIR`: Defines the data directory
-* `NDD_AUTH_TOKEN`: Optional authentication token (see below)
-
-### Authentication
-
-**ndd** supports two authentication modes:
-
-**Open Mode (No Authentication)** - Default when `NDD_AUTH_TOKEN` is not set:
-```bash
-# All APIs work without authentication
-./build/ndd
-curl http://{{BASE_URL}}/api/v1/index/list
-```
-
-**Token Mode** - When `NDD_AUTH_TOKEN` is set:
-```bash
-# Generate a secure token
-export NDD_AUTH_TOKEN=$(openssl rand -hex 32)
-./build/ndd
-
-# All protected APIs require the token in Authorization header
-curl -H "Authorization: $NDD_AUTH_TOKEN" http://{{BASE_URL}}/api/v1/index/list
-```
-
-### Execution Example
-
-To run the database using the AVX2 binary and a local `data` folder:
-
-```bash
-# 1. Create the data directory
-mkdir -p ./data
-
-# 2. Export the environment variable and run
-export NDD_DATA_DIR=$(pwd)/data
-./build/ndd
-```
-
-Alternatively, as a single line:
-
-```bash
-NDD_DATA_DIR=./data ./build/ndd
-<<<<<<< HEAD
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
-=======
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
-```
-
----
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## ⚙️ Prerequisites
 
 Before running the project, ensure you have:
@@ -475,7 +259,8 @@ Once you see `Local URL: http://localhost:8501`, open that URL in your web brows
 *AI-powered analysis showing detailed explanations of repository purpose, functionality, and workflow. Includes repository map, file browser, and download functionality*
 
 ### 3. File-Level AI Analysis
-![File Analysis](assets/screenshots/file_analysis.png)
+<img width="1814" height="838" alt="File_analysis" src="https://github.com/user-attachments/assets/b60834d8-6f3d-4d48-a739-3c974d693125" />
+
 *Detailed file analysis with human-readable information and technical function breakdown for individual files*
 
 ---
@@ -563,26 +348,7 @@ This project is licensed under the MIT License.
 ## 👤 Author
 **Mahesh**  
 GitHub: https://github.com/Mahesh2004-prog
-=======
-=======
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
 
-
-## 3. Docker Deployment
-
-We provide a Dockerfile for easy containerization. This ensures a consistent runtime environment and simplifies the deployment process across various platforms.
-
-### Build the Image
-
-You **must** specify the target architecture (`avx2`, `avx512`, `neon`, `sve2`) using the `BUILD_ARCH` build argument. You can optionally enable a debug build using the `DEBUG` argument.
-
-```bash
-# Production Build (AVX2) (for x86_64 systems)
-docker build --ulimit nofile=100000:100000 --build-arg BUILD_ARCH=avx2 -t endee-oss:latest -f ./infra/Dockerfile .
-
-# Debug Build (Neon) (for arm64, mac apple silicon)
-docker build --ulimit nofile=100000:100000 --build-arg BUILD_ARCH=neon --build-arg DEBUG=true -t endee-oss:latest -f ./infra/Dockerfile .
-```
 
 ### Run the Container
 
@@ -604,52 +370,96 @@ leave `NDD_AUTH_TOKEN` empty or remove it to run endee without authentication.
 You can also use `docker-compose` to run the service.
 
 1. Start the container:
+=======
+### One-Time Ollama Setup
+1. Open a terminal (Windows: Search "cmd" or "PowerShell")
+2. Download the AI model:
    ```bash
-   docker-compose up
+   ollama run qwen2.5:3b
    ```
+3. Wait for download, then type `/bye` to exit
+4. Keep Ollama running in the background
 
 ---
 
-## 4. Running Docker container from registry
+##  Running the Project in VS Code
 
-You can run Endee directly using the pre-built image from Docker Hub without building locally.
+###  Step 1: Open Project in VS Code
+1. Open VS Code
+2. Click **File** → **Open Folder**
+3. Navigate to and select the `GitAicode_Reader` folder
 
-### Using Docker Compose
+###  Step 2: Open Terminal in VS Code
+Choose any method:
+- **Keyboard Shortcut**: Press `Ctrl + `` (backtick)
+- **Menu**: Click **Terminal** → **New Terminal**
+- **Command Palette**: Press `Ctrl + Shift + P`, type "Create New Terminal", press Enter
 
-Create a new directory for Endee:
+###  Step 3: Run the Application
+
+####  Option A: Automatic Setup (Recommended)
+In the VS Code terminal, run:
+```bash
+.\start.bat
+```
+
+This script will automatically:
+- ✓ Create a virtual environment
+- ✓ Install all dependencies
+- ✓ Check for Ollama
+- ✓ Launch the Streamlit app
+
+**Wait for the message:** `Local URL: http://localhost:8501`
+
+####  Option B: Manual Setup
+If the automated script fails, run these commands one by one in the VS Code terminal:
 
 ```bash
-mkdir endee && cd endee
+# 1. Create virtual environment
+python -m venv venv
+
+# 2. Activate virtual environment
+.\venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the application
+streamlit run app_files/app.py
 ```
 
-Inside this directory, create a file named `docker-compose.yml` and copy the following content into it:
+*Note: You should see `(venv)` at the start of your terminal prompt after activation*
 
-```yaml
-services:
-  endee:
-    image: endeeio/endee-server:latest
-    container_name: endee-server
-    ports:
-      - "8080:8080"
-    environment:
-      NDD_NUM_THREADS: 0
-      NDD_AUTH_TOKEN: ""  # Optional: set for authentication
-    volumes:
-      - endee-data:/data
-    restart: unless-stopped
-
-volumes:
-  endee-data:
-```
-
-Then run:
-```bash
-docker compose up -d
-```
-
-for more details visit [docs.endee.io](https://docs.endee.io/quick-start)
+###  Step 4: Open in Browser
+Once you see `Local URL: http://localhost:8501`, open that URL in your web browser.
 
 ---
+
+##  How to Use the Application
+
+1. **Enter GitHub URL**: Paste a repository URL (e.g., `https://github.com/pallets/flask`)
+2. **Click "Analyze Repo"**: Wait for cloning and processing to complete
+3. **Browse Files**: View repository files from the sidebar
+4. **Ask Questions**: Type questions in natural language like:
+   - "What does this repository do?"
+   - "Explain this file in simple terms"
+   - "Where is authentication handled?"
+5. **View Results**: See AI-generated answers with referenced source files and metrics
+
+---
+
+##  Example Output
+
+**User Question:**
+> "Explain what this file does"
+
+**AI Response:**
+- Human-readable explanation
+- Technical function of the file
+- Reason why the code exists
+- Referenced source files
+---
+
 
 ## Contribution
 
@@ -696,7 +506,4 @@ licensed under their respective open source licenses.
 
 Use of those components is governed by the terms and conditions of their
 individual licenses, not by the Apache License 2.0 for this project.
-<<<<<<< HEAD
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
-=======
->>>>>>> 3c275d9e81e63e9383d808ceef9bd44c61348d25
+
